@@ -1,0 +1,10 @@
+<config>
+  <global>
+    <!-- Unit: millisecond -->
+    <query-timeout>2000</query-timeout>
+    <workers-count>4</workers-count>
+  </global>
+  <dbservers>
+  	<server ip="127.0.0.1" port="3333" connect-count="50" />
+  </dbservers>
+</config>

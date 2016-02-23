@@ -1,0 +1,42 @@
+{
+  "namespace": "samples",
+  "statements": [
+    {
+      "name": "insert_test",
+      "db": "test",
+      "type": "insert",
+      "sql": "insert into student values ('%s', %d, '%s', '%s', %d)",
+      "arguments": [
+        ('f1', 'string'),
+        ('f2', 'int'),
+        ('f3', 'string'),
+        ('f4', 'string'),
+        ('f5', 'int'),
+      ],
+    },    
+    {
+      "name": "update_test",
+      "db": "test",
+      "type": "update",
+      "sql": "update student set name = '%s' where id = 1",
+      "arguments": [
+        ('f1', 'string'),
+      ],
+    },
+    {
+      "name": "select_test",
+      "db": "test",
+      "type": "select",
+      "sql": "select name, age, address, school from student where id = %d",
+      "arguments": [
+        ('f1', 'int'),
+      ],
+      "fields":[
+	('name', "string"),
+	('age', "int"),
+	('address', "string"),
+	('school', "string"),
+      ],
+    }
+  ],
+}

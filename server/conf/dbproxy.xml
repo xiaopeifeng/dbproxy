@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <global>
+    <port>3333</port>
+    <worker-count>4</worker-count>
+    <loglevel>2</loglevel>
+  </global>
+  <databases>
+    <database name="uinf_db" ip="172.16.7.150" port="3306" user="root" passwd="root321" connect-count="20" />
+    <database name="ups_db" ip="172.16.7.150" port="3306" user="root" passwd="root321" connect-count="2" />
+    <database name="test" ip="172.16.7.150" port="3306" user="root" passwd="root321" connect-count="20" />
+  </databases>
+</config>
