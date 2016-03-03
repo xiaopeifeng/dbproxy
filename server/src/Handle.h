@@ -4,8 +4,8 @@
 class Handle
 {
 public:
-	virtual void handleEvent(int events) = 0;
-	virtual int getSocket() = 0; 
+  virtual void handleEvent(int events) = 0;
+  virtual int getSocket() = 0; 
 };
 
 #endif

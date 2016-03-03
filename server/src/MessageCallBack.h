@@ -7,8 +7,13 @@
 class MessageCallBack 
 {
 public:
-	std::string processMysqlRequest(const std::string& db, const std::string& sql); 
+  std::string processMysqlRequest(const std::string& db, const std::string& sql); 
+
 private:
-	std::string addHeader(const std::string& str);
+  std::string addHeader(const std::string& str);
+
+private:
+  MessageCallBack(const MessageCallBack&);
+  void operator=(const MessageCallBack&);
 };
 #endif

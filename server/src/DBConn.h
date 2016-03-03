@@ -33,28 +33,28 @@ struct result_t
 class DBConn
 {
 public:
-	explicit DBConn(DBInfo info);
-	~DBConn();
+  explicit DBConn(DBInfo info);
+  ~DBConn();
 
 public:
-	bool initial();
-	std::string query(const std::string& sql);
-	std::string getName() { return m_dbname; }
-	void disconnect();
+  bool initial();
+  std::string query(const std::string& sql);
+  std::string getName() { return m_dbname; }
+  void disconnect();
 
 private:
-	bool connect();
-	//code:desc:{field1|field2|field3}{..|..|..|..}{}{}{}{}
-	std::string serialToString(const result_t& r);
+  bool connect();
+  //code:desc:{field1|field2|field3}{..|..|..|..}{}{}{}{}
+  std::string serialToString(const result_t& r);
 
 private:
-	std::string m_ip;
-	std::string m_dbname;
-	std::string m_account;
-	std::string m_passwd;
-	int m_port;
-	bool m_connected;
-	MYSQL* m_mysql;
+  std::string m_ip;
+  std::string m_dbname;
+  std::string m_account;
+  std::string m_passwd;
+  int m_port;
+  bool m_connected;
+  MYSQL* m_mysql;
 };
 
 #endif

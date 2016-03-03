@@ -7,33 +7,33 @@
 
 struct DBInfo
 {
-	std::string dbname;
-	std::string ip;
-	int port;
-	std::string account;
-	std::string passwd;
-	int conn_cnt;
+  std::string dbname;
+  std::string ip;
+  int port;
+  std::string account;
+  std::string passwd;
+  int conn_cnt;
 };
 
 class DBConfig
 {
 public:
-	DBConfig(const std::string& path);
-	~DBConfig();
+  DBConfig(const std::string& path);
+  ~DBConfig();
 
 public:
-	bool loadConfig();
-	std::vector<DBInfo> getDBInfo() { return m_dbs; }
-	int getWorkCount() { return m_worker_count; }
-	int getLogLevel() { return m_log_level; }
-	int getListenPort() { return m_listen_port; }
-	
+  bool loadConfig();
+  std::vector<DBInfo> getDBInfo() { return m_dbs; }
+  int getWorkCount() { return m_worker_count; }
+  int getLogLevel() { return m_log_level; }
+  int getListenPort() { return m_listen_port; }
+  
 private:
-	std::vector<DBInfo> m_dbs;
-	int m_worker_count;
-	int m_listen_port;
-	int m_log_level;
-	const std::string m_path;
+  std::vector<DBInfo> m_dbs;
+  int m_worker_count;
+  int m_listen_port;
+  int m_log_level;
+  const std::string m_path;
 };
 
 #endif

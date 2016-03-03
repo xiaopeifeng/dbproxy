@@ -34,10 +34,10 @@ typedef struct samples_select_test_field{
 }samples_select_test_field_t;
 
 typedef struct samples_select_test_res{
-	samples_select_test_res()
-	{
-		memset(desc, 0, sizeof(desc));
-	}
+  samples_select_test_res()
+  {
+    memset(desc, 0, sizeof(desc));
+  }
 
   int code;
   char desc[1024];

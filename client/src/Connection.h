@@ -8,21 +8,21 @@
 class Connection
 {
 public:
-	Connection(const std::string& ip, int port);
-	~Connection();
+  Connection(const std::string& ip, int port);
+  ~Connection();
 
 public:
-	bool initial();	
-	int send(const std::string& str);
-	int recv(std::string& str);
+  bool initial();  
+  int send(const std::string& str);
+  int recv(std::string& str);
 
 private:
-	void setConnection();
+  void setConnection();
 
 private:
-	std::string m_ip;
-	int m_port;	
-	int m_fd;
+  std::string m_ip;
+  int m_port;  
+  int m_fd;
 };
 
 #endif
