@@ -42,7 +42,7 @@ public:
 
 private:
   Thread(const Thread&);
-  void operator(const Thread&);
+  void operator=(const Thread&);
 
 private:
   detail::ThreadData m_thread_data;
