@@ -41,6 +41,10 @@ public:
   const std::string& getThreadName() { return m_thread_data.getThreadName(); };
 
 private:
+  Thread(const Thread&);
+  void operator=(const Thread&);
+
+private:
   detail::ThreadData m_thread_data;
   pthread_t m_pthread_id;
   bool m_start;

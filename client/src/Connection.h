@@ -2,7 +2,6 @@
 #define DBPROXY_CONNECTION_H
 
 #include <string>
-//#define MSG_HEAD_SIZE 8 
 #define MSG_HEAD_SIZE 4 
 
 class Connection
@@ -18,6 +17,8 @@ public:
 
 private:
   void setConnection();
+  Connection(const Connection&);	
+  void operator=(const Connection&);
 
 private:
   std::string m_ip;
