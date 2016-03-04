@@ -81,7 +81,7 @@ public:
 
 private:
   NotifyHandle(const NotifyHandle&);
-  void operator(const NotifyHandle&);  
+  void operator=(const NotifyHandle&);  
 
 private:
   Socket* m_pipe_read;
