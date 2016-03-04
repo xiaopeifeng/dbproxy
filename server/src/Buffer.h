@@ -20,7 +20,7 @@ public:
 
 private:
   Buffer(const Buffer&);
-  void operator(const Buffer&);
+  void operator=(const Buffer&);
 
 public:
   char* m_data;
