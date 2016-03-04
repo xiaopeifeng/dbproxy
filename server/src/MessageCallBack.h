@@ -7,6 +7,7 @@
 class MessageCallBack 
 {
 public:
+  MessageCallBack(){}
   std::string processMysqlRequest(const std::string& db, const std::string& sql); 
 
 private:
