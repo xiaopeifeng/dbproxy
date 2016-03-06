@@ -1,7 +1,7 @@
 #ifndef DBPROXY_CLIENT_H
 #define DBPROXY_CLIENT_H
 #include "ConnManager.h"
-#include "DBConfig.h"
+#include "rapidxml_parser.h"
 #include "EventLoop.h"
 #include "EventLoopThread.h"
 #include <vector>
@@ -79,7 +79,7 @@ private:
   int doQuery(void*);
   
 private:
-  DBConfig m_conf;
+  XmlParser m_conf; 
   ConnManager* m_conn_manager;
   bool m_initial;  
   std::vector<EventLoopThread*> m_threads_pool;

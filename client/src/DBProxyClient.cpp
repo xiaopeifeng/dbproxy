@@ -22,14 +22,17 @@ DBProxyClient::~DBProxyClient()
 
 bool DBProxyClient::initial()
 {
-  if( m_conf.loadConfig() != true ) return false;
-  DBInfo dbinfo = m_conf.getDBInfo();
-  std::cout << "dbinfo: " << std::endl;
-  std::cout << "ip: " << dbinfo.ip << std::endl;
-  std::cout << "port: " << dbinfo.port << std::endl;
-  std::cout << "conn: " << dbinfo.conn_cnt << std::endl;
+ if(!m_conf.parse()){
+   assert(false);
+ }
+ 
+ std::vector<XmlParser::DBNode> dbVec = m_conf.getDBServer();
+ if(dbVec.empty()){
+  return false;
+ }
+ assert(dbVec.size() == 1);
   
-  m_conn_manager = new ConnManager(dbinfo.ip, dbinfo.port, dbinfo.conn_cnt);
+  m_conn_manager = new ConnManager(dbVec[0].ip, dbVec[0].port, dbVec[0].connCount);
   if( m_conn_manager->initial() != true ){
     delete m_conn_manager;
     m_conn_manager = NULL;
