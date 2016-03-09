@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <errmsg.h>
 
-DBConn::DBConn(DBInfo info)
+DBConn::DBConn(XmlParser::DBNode info)
   : m_ip(info.ip)
   , m_dbname(info.dbname)
   , m_account(info.account)

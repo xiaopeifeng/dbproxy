@@ -1,6 +1,7 @@
 #ifndef DBPROXY_DBCONN_H
 #define DBPROXY_DBCONN_H
-#include "DBConfig.h"
+#include "rapidxml_parser.h"
+
 #include <mysql.h>
 #include <stdlib.h>
 #include <string>
@@ -33,7 +34,7 @@ struct result_t
 class DBConn
 {
 public:
-  explicit DBConn(DBInfo info);
+  explicit DBConn(XmlParser::DBNode info);
   ~DBConn();
 
 public:

@@ -13,7 +13,7 @@ public:
 
 public:
   static DBConnPool* getDBPoolInstance();
-  bool initial(const std::vector<DBInfo>& dbs);
+  bool initial(const std::vector<XmlParser::DBNode>& dbs);
   DBConn* getConn(const std::string& db);
   void releaseConn(DBConn* db);
 
@@ -24,7 +24,7 @@ private:
 
 private:
   std::map<std::string, BlockQueue<DBConn*>* > m_dbpool;
-  std::vector<DBInfo> m_db_infos;
+  std::vector<XmlParser::DBNode> m_db_infos;
   static DBConnPool* m_instance;
   bool m_initialed;
 };

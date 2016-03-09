@@ -26,7 +26,7 @@ DBConnPool* DBConnPool::getDBPoolInstance()
   return m_instance;
 }
 
-bool DBConnPool::initial(const std::vector<DBInfo>& dbs)
+bool DBConnPool::initial(const std::vector<XmlParser::DBNode>& dbs)
 {
   if( m_initialed ) return true;
   assert(dbs.size() > 0);

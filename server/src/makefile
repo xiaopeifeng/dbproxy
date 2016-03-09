@@ -10,11 +10,9 @@ export LD_LIBRARY_PATH=:/usr/lib:/usr/local/lib:/usr/lib64/mysql
 CXX_OBJS =$(patsubst %.cpp, %.o, $(wildcard *.cpp))
 C_OBJS  =$(patsubst %.c, %.o, $(wildcard *.c))
 
-THIRD_PARTY =../../third_party
 INCLUDE =-I.
-INCLUDE +=-I$(THIRD_PARTY)/mysql/include
-LIB = -lpthread -liksemel -ldl
-LIB += $(THIRD_PARTY)/mysql/lib/libmysqlclient64.a
+INCLUDE +=-I/usr/include/mysql
+LIB = -lpthread -liksemel -ldl -lmysqlclient
 
 all:$(TARGET)
 
