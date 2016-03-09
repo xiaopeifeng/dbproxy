@@ -10,11 +10,11 @@ class XmlParser
 public:
   struct DBNode
   {
-		std::string dbname;
+    std::string dbname;
     std::string ip;
     int port;
-		std::string account;
-		std::string passwd;
+    std::string account;
+    std::string passwd;
     int connCount; 
   };
 
@@ -28,8 +28,8 @@ public:
   std::vector<DBNode> getDBServer() const
   { return dbServers_; }
 
-	int getListenPort() const
-	{ return listenPort_; }
+  int getListenPort() const
+  { return listenPort_; }
 
 private:
   XmlParser(const XmlParser&);
@@ -39,8 +39,8 @@ private:
   std::string path_;
   bool parsed_;
   int workCount_;
-	int logLevel_;
-	int listenPort_;
+  int logLevel_;
+  int listenPort_;
   std::vector<DBNode> dbServers_;
 };
 

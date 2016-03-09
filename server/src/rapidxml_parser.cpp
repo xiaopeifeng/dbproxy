@@ -10,8 +10,8 @@ XmlParser::XmlParser(const char* path)
   : path_(path)
   , parsed_(false)
   , workCount_(0)
-	, logLevel_(0)
-	, listenPort_(0)
+  , logLevel_(0)
+  , listenPort_(0)
 {}
 
 bool XmlParser::parse()
@@ -44,18 +44,18 @@ bool XmlParser::parse()
       if(std::string("name") == attr->name()){
         node.dbname = attr->value();
       }else if(std::string("ip") == attr->name()){
-      	node.ip = attr->value();
+        node.ip = attr->value();
       }else if(std::string("port") == attr->name()){
         node.port = atoi(attr->value());
       }else if(std::string("user") == attr->name()){
-				node.account = attr->value();
-			}else if(std::string("passwd") == attr->name()){
-				node.passwd = attr->value();
-			}else if(std::string("connect-count") == attr->name()){
-				node.connCount = atoi(attr->value());
-			}else{
-				assert(false);
-			}
+        node.account = attr->value();
+      }else if(std::string("passwd") == attr->name()){
+        node.passwd = attr->value();
+      }else if(std::string("connect-count") == attr->name()){
+        node.connCount = atoi(attr->value());
+      }else{
+        assert(false);
+      }
     }
     dbServers_.push_back(node);
   }

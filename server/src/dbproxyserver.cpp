@@ -20,12 +20,12 @@ IgnoreSigPipe iniSig;
 
 int main()
 {
-	XmlParser confParser("../conf/dbproxy.xml");
-	if(!confParser.parse()){
-		std::cout << "dbproxy parse failed" << std::endl;
-		return -1;
-	}
-	
+  XmlParser confParser("../conf/dbproxy.xml");
+  if(!confParser.parse()){
+    std::cout << "dbproxy parse failed" << std::endl;
+    return -1;
+  }
+  
   bool b = DBConnPool::getDBPoolInstance()->initial(confParser.getDBServer());  
   if(b == false){
     std::cout << "DBConnect Pool initial failed" << std::endl;
@@ -38,7 +38,7 @@ int main()
   
   std::cout << "worker_cout: " << worker_count << std::endl;
   for(int i = 0; i < worker_count; ++i)
-	{
+  {
     EventLoopThread* t= new EventLoopThread();
     EventLoop* lp = t->start();
     loops.push_back(lp);
@@ -51,13 +51,13 @@ int main()
   Acceptor acceptor(loops, port);
   if(acceptor.start() == false){
     std::cout << "acceptor start failed!" << std::endl;
-		return -1;
+    return -1;
   }
   
   acceptor.waitStop();
 
   for(size_t i = 0; i < threads.size(); ++i)
-	{
+  {
     threads[i]->waitStop();
   }
 
