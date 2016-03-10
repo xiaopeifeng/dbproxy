@@ -40,7 +40,10 @@ public:
 public:
   bool initial();
   std::string query(const std::string& sql);
-  std::string getName() { return m_dbname; }
+
+  std::string getName() const
+  { return m_dbname; }
+
   void disconnect();
 
 private:

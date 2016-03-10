@@ -18,13 +18,14 @@ public:
 public:
   XmlParser(const char* path);
   bool parse(); 
-  int getTimeOut() 
+
+  int getTimeOut() const 
   { return timeOutValue_; }
 
-  int getWorkCount()
+  int getWorkCount() const
   { return workCount_; }
  
-  std::vector<DBNode> getDBServer()
+  std::vector<DBNode> getDBServer() const
   { return dbServers_; }
 
 private:

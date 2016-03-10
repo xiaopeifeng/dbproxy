@@ -71,7 +71,7 @@ bool Socket::connect()
 
 Socket* Socket::accept()
 {
-  if( m_fd == -1 ) return false;
+  if( m_fd == -1 ) return NULL;
   int sock = ::accept(m_fd, NULL, NULL);
   if( sock == -1 ) {
     printf("accept error!\n");

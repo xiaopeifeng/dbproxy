@@ -16,8 +16,11 @@ struct ThreadData
   {}
 
   void run();
-  long gettid() { return m_tid; }
-  const std::string& getThreadName() { return m_name; }
+  long gettid() const 
+  { return m_tid; }
+
+  const std::string& getThreadName() const
+  { return m_name; }
 
 private:
   ThreadFunc m_func;
@@ -37,8 +40,11 @@ public:
   void start();
   void stop();
   void join();
-  long gettid() { return m_thread_data.gettid(); }
-  const std::string& getThreadName() { return m_thread_data.getThreadName(); };
+  long gettid() const
+  { return m_thread_data.gettid(); }
+
+  const std::string& getThreadName() const
+  { return m_thread_data.getThreadName(); };
 
 private:
   Thread(const Thread&);

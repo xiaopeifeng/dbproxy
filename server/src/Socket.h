@@ -18,7 +18,9 @@ public:
   bool connect();  
   Socket* accept();
   bool close();
-  int getfd() { return m_fd; }
+
+  int getfd() const
+  { return m_fd; }
 
   int send(const char* buf, int sz);
 //  int recv(std::string& str);

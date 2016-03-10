@@ -1,7 +1,7 @@
 CC      =gcc
 CXX     =g++
 LINK    =g++
-CFLAGS  = -Wall -O3 -std=c++0x
+CFLAGS  = -Wall -Werror -O3 -std=c++0x
 TARGET  =dbproxy
 SRCS    =$(wildcard *.cpp)
 SRCS    +=$(wildcard *.c)
@@ -12,7 +12,7 @@ C_OBJS  =$(patsubst %.c, %.o, $(wildcard *.c))
 
 INCLUDE =-I.
 INCLUDE +=-I/usr/include/mysql
-LIB = -lpthread -liksemel -ldl -lmysqlclient
+LIB = -lpthread -ldl -lmysqlclient
 
 all:$(TARGET)
 

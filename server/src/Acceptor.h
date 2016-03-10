@@ -41,7 +41,7 @@ private:
   
 private:
   std::vector<EventLoop*> m_loops;
-  int m_curloop_token;  
+  size_t m_curloop_token;  
   EventLoopThread m_loopthread;
   EventLoop* m_local_loop;
   int m_port;

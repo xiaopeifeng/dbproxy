@@ -51,7 +51,7 @@ bool DBProxyClient::initial()
   return true;
 }
 
-EventLoop* DBProxyClient::getNextLoop()
+EventLoop* DBProxyClient::getNextLoop() 
 {
   assert(m_loops.size() > 0);
   return m_loops[m_cur_loop++ % m_loops.size()];

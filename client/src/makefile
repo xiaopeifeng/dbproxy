@@ -1,7 +1,7 @@
 CC      =gcc
 CXX     =g++
 LINK    =g++
-CFLAGS  = -Wall -O3 -std=c++0x
+CFLAGS  = -Wall -Werror -O3 -std=c++0x
 TARGET  =dbproxyclient
 SRCS    =$(wildcard *.cpp)
 SRCS    +=$(wildcard *.c)
@@ -9,7 +9,7 @@ SRCS    +=$(wildcard *.c)
 CXX_OBJS =$(patsubst %.cpp, %.o, $(wildcard *.cpp))
 C_OBJS  =$(patsubst %.c, %.o, $(wildcard *.c))
 
-#LIB = -lpthread -liksemel
+#LIB = -lpthread
 LIB=dbproxy.a
 all:$(LIB)
 
@@ -22,4 +22,4 @@ $(LIB):$(CXX_OBJS) $(C_OBJS)
 
 .PHONY:clean
 clean:
-	rm -rf *.o $(TARGET) $(CXX_OBJS) $(C_OBJS)
+	rm -rf *.o $(TARGET) $(CXX_OBJS) $(C_OBJS) $(LIB)

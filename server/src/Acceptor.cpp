@@ -33,10 +33,13 @@ void Acceptor::handleEvent(int events)
     std::cout << "newsock:" << newsock << std::endl;
     if( newsock == NULL ){
       if( errno == EINTR ) continue;
-      else if( errno == EWOULDBLOCK || errno == EAGAIN ) return;
-      else{
+      else if( errno == EWOULDBLOCK 
+            || errno == EAGAIN ){
+        return;
+      }else{
         // should not execute here.
         // TODO: log error
+        assert(false);
         return;
       }
     }else{
@@ -52,9 +55,9 @@ void Acceptor::handleEvent(int events)
 
 EventLoop* Acceptor::getNextLoop()
 {
-  assert(m_loops.size() > 0);
+  assert(!m_loops.empty());
   EventLoop* ptr = m_loops[m_curloop_token];
-  m_curloop_token = (++m_curloop_token) % m_loops.size();
+  m_curloop_token = (m_curloop_token+1) % m_loops.size();
 
   return ptr;
 }
